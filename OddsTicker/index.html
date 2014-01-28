@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <title>SignalR Odds Ticker</title>
+  <link href="Content/bootstrap.css" rel="stylesheet" />
+  <link href="Content/toastr.css" rel="stylesheet" />
+  <link href="Content/app.css" rel="stylesheet" />
+</head>
+
+<body data-ng-app="app" data-ng-controller="graphController as vm" ng-cloak>
+  <div class="jumbotron">
+    <h1>Odds Ticker</h1>
+    <p>An Odds Ticker, made with Reactive Extensions, SingnalR, D3, Angular and Bootstrap</p>
+  </div>
+  <div id="wrap">
+    <div class="container">
+      <div class="well well-sm">
+        <div class="fader-animation" data-ng-repeat="match in vm.currentMatches">
+          <div class="row">
+            <div class="col-md-6 col-md-offset-3 col-xs-12">
+              <ot-d3-bars bar-haight="20" bar-padding="3" data="match.outcomes"></ot-d3-bars>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 col-md-offset-3 col-xs-12">
+              <ot-odds-grid data="match.outcomes"></ot-odds-grid>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="footer">
+    <div class="container">
+      <p class="text-muted">something</p>
+    </div>
+  </div>
+
+  <!-- Vendor Scripts -->
+  <script src="scripts/jquery-2.0.3.js"></script>
+  <script src="scripts/angular.js"></script>
+  <script src="scripts/angular-animate.js"></script>
+  <script src="scripts/toastr.js"></script>
+  <script src="scripts/jquery.signalR-2.0.1.min.js"></script>
+  <script src="scripts/underscore.string.js"></script>
+  <script src="/signalr/hubs"></script>
+  <script src="scripts/d3.v3.js"></script>
+  
+  <!-- bootstrap -->
+  <script src="app.js"></script>
+
+  <!-- app -->
+  <script src="ticker.js"></script>
+  <script src="oddsController.js"></script>
+  <script src="graphController.js"></script>
+  
+  <!-- app Services -->
+  <script src="directives.js"></script>
+  <script src="d3.js"></script>
+  <script src="reusableCharts.js"></script>
+  <script src="model.js"></script>
+
+</body>
+</html>
