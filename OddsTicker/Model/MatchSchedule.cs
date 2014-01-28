@@ -14,7 +14,7 @@ namespace OddsTicker.Model
     {
       var matchStarts = DateTimeOffset.Now.AddMinutes(1);
       var matches = MatchSchedule.GetMatchSchedule()
-                                 .OrderBy(x => x.TeamA)
+                                 .OrderByDescending(x => x.TeamA)
                                  .ToObservable()
                                  .Zip(Observable.Interval(TimeSpan.FromSeconds(1)), (x, y) => x);
 

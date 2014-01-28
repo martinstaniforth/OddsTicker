@@ -10,7 +10,8 @@
 <body data-ng-app="app" data-ng-controller="graphController as vm" ng-cloak>
   <div class="jumbotron">
     <h1>Odds Ticker</h1>
-    <p>An Odds Ticker, made with Reactive Extensions, SingnalR, D3, Angular and Bootstrap</p>
+    <h2>A Football Odds Ticker, made with Reactive Extensions, SignalR, D3, Angular and Bootstrap.</h2>
+    <p></p>
   </div>
   <div id="wrap">
     <div class="container">
@@ -18,7 +19,7 @@
         <div class="fader-animation" data-ng-repeat="match in vm.currentMatches">
           <div class="row">
             <div class="col-md-6 col-md-offset-3 col-xs-12">
-              <ot-d3-bars bar-haight="20" bar-padding="3" data="match.outcomes"></ot-d3-bars>
+              <ot-d3-bars data="match.outcomes"></ot-d3-bars>
             </div>
           </div>
           <div class="row">
@@ -59,6 +60,17 @@
   <script src="d3.js"></script>
   <script src="reusableCharts.js"></script>
   <script src="model.js"></script>
+  <script>
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date(); a = s.createElement(o),
+      m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
+    ga('create', 'UA-47547828-1', 'apphb.com');
+    ga('send', 'pageview');
+
+  </script>
 </body>
 </html>
