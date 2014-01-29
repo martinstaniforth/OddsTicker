@@ -29,8 +29,8 @@ namespace OddsTicker.Model
                   .RefCount();
 
       var bills = new Bookmaker("Billy Hills");
-      var brokeLads = new Bookmaker("Brokelads", 0.95m);
-      var panicAll = new Bookmaker("Panic-all", 0.97m);
+      var brokeLads = new Bookmaker("Brokelads", 0.89m);
+      var panicAll = new Bookmaker("Panic-all", 0.9m);
 
 
       var billsFeed = bills.GetBookmakerOdds(SentimentDeltas, random);

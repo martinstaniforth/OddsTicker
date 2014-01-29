@@ -13,7 +13,7 @@ namespace OddsTicker.Model
     public SentimentProbabilities(TeamMetrics homeTeamMetrics, TeamMetrics awayTeamMetrics)
     {
       HomeTeamMetrics = homeTeamMetrics;
-      AwayTeamMetrics = homeTeamMetrics;
+      AwayTeamMetrics = awayTeamMetrics;
       this.scoreLineProbabilties = new Dictionary<string, decimal>();
       CalculateProbabilities();
     }
@@ -65,8 +65,8 @@ namespace OddsTicker.Model
 
       scoreLines.ToList().ForEach(scoreline =>
       {
-        var scoreLineProb = poisson(HomeTeamMetrics.HomeExpectedGoals, scoreline.HomeGoal) *
-                            poisson(AwayTeamMetrics.AwayExpectedGoals, scoreline.AwayGoal);
+        var scoreLineProb = poisson(HomeTeamMetrics.HomeAverageGoals * HomeTeamMetrics.HomeAttackStrength * AwayTeamMetrics.AwayDefenceWeakness, scoreline.HomeGoal) *
+                            poisson(AwayTeamMetrics.AwayAverageGoals * AwayTeamMetrics.AwayAttackStrength * HomeTeamMetrics.HomeDefenceWeakness, scoreline.AwayGoal);
 
         this.scoreLineProbabilties[string.Format("{0}-{1}", scoreline.HomeGoal, scoreline.AwayGoal)] = scoreLineProb;
 

@@ -16,8 +16,14 @@ namespace OddsTicker.Model
     public decimal AwayAttackStrength { get; set; }
     public decimal AwayDefenceWeakness { get; set; }
 
-    public decimal HomeExpectedGoals { get { return HomeAverageGoals * HomeAttackStrength * AwayDefenceWeakness; } }
-    public decimal AwayExpectedGoals { get { return AwayAverageGoals * AwayAttackStrength * HomeDefenceWeakness; } }
+    //public decimal HomeExpectedGoals
+    //{
+    //  get { return HomeAverageGoals * HomeAttackStrength * AwayDefenceWeakness; }
+    //}
+    //public decimal AwayExpectedGoals
+    //{
+    //  get { return AwayAverageGoals * AwayAttackStrength * HomeDefenceWeakness; }
+    //}
 
     public TeamMetrics UpdateMetrics(Random random)
     {

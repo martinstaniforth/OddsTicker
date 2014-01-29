@@ -12,7 +12,7 @@ namespace OddsTicker.Model
     private decimal payout;
     private const double probabilityOfBookmakerMissingSentiment = 0.4;
 
-    public Bookmaker(string name, decimal payout = .93m)
+    public Bookmaker(string name, decimal payout = .90m)
     {
       this.name = name;
       this.payout = payout;
