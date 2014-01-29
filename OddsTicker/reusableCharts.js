@@ -67,7 +67,7 @@
           });
 
           return data;
-        }
+        };
 
         matrix.setSize = function (w, h) {
           width = w;
@@ -77,19 +77,19 @@
 
         matrix.values = function (data) {
           return matrix(data).values;
-        }
+        };
 
         matrix.bookmakers = function (data) {
           return matrix(data).bookmakerHead;
-        }
+        };
 
         matrix.outcomes = function (data) {
           return matrix(data).outcomeHead;
-        }
+        };
 
         return matrix;
 
-      }
+      };
       
       function exports(_selection) {
         _selection.each(function (_data) {
@@ -102,7 +102,7 @@
                     .attr("width", width)
                     .attr("height", height);
 
-            matrix = Matrix().setSize(width, height);
+            matrix = new Matrix().setSize(width, height);
           }
 
           function cell() {
@@ -274,25 +274,25 @@
 
 
         });
-      };
+      }
 
       exports.width = function (_x) {
         if (!arguments.length) return width;
         width = parseInt(_x);
         //duration = 0;
         return this;
-      }
+      };
       exports.height = function (_x) {
         if (!arguments.length) return height;
         height = parseInt(_x);
         //duration = 0;
         return this;
-      }
+      };
       exports.ease = function (_x) {
         if (!arguments.length) return height;
         ease = _x;
         return this;
-      }
+      };
 
       return exports;
 
@@ -455,18 +455,18 @@
         width = parseInt(_x);
         //duration = 0;
         return this;
-      }
+      };
       exports.height = function (_x) {
         if (!arguments.length) return height;
         height = parseInt(_x);
         //duration = 0;
         return this;
-      }
+      };
       exports.ease = function (_x) {
         if (!arguments.length) return height;
         ease = _x;
         return this;
-      }
+      };
 
       return exports;
     }

@@ -95,10 +95,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app.js" />
-    <Content Include="app\app.js" />
-    <Content Include="app\controllers\demoCtrl2.js" />
-    <Content Include="app\directives\d3Basic.js" />
-    <Content Include="app\services\d3.js" />
     <Content Include="Content\app.css">
       <DependentUpon>app.less</DependentUpon>
     </Content>
@@ -108,8 +104,6 @@
     <Content Include="d3.js" />
     <Content Include="directives.js" />
     <Content Include="graphController.js" />
-    <Content Include="horizontalProbChart.js" />
-    <Content Include="index2.html" />
     <Content Include="LICENSE.txt" />
     <Content Include="model.js" />
     <Content Include="reusableCharts.js" />
@@ -131,7 +125,6 @@
     <Content Include="Content\toastr.min.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="index.html" />
-    <Content Include="oddsController.js" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
@@ -141,6 +134,7 @@
     <Content Include="Content\app.less" />
     <Content Include="scripts\angular.min.js.map" />
     <Content Include="scripts\angular-animate.min.js.map" />
+    <Content Include="Model\Simple Football Model.xlsx" />
     <None Include="scripts\jquery-2.0.3.intellisense.js" />
     <Content Include="scripts\jquery-2.0.3.js" />
     <Content Include="scripts\jquery-2.0.3.min.js" />
