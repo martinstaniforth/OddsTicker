@@ -105,6 +105,8 @@
             matrix = new Matrix().setSize(width, height);
           }
 
+          var matrixCalc = matrix(newData);
+
           function cell() {
             this
               .attr(
@@ -149,23 +151,19 @@
           }
           
           
-          cells = svg.data([newData])
-                     .selectAll('rect')
-                     .data(matrix.values);
+          cells = svg.selectAll('rect')
+                     .data(matrixCalc.values);
 
-          captions = svg.data([newData])
-                        .selectAll('text.caption')
-                        .data(matrix.values);
+          captions = svg.selectAll('text.caption')
+                        .data(matrixCalc.values);
 
           bookmakerHeadings
-            = svg.data([newData])
-                 .selectAll('text.heading')
-                 .data(matrix.bookmakers);
+            = svg.selectAll('text.heading')
+                 .data(matrixCalc.bookmakerHead);
 
           outcomeHeadings
-            = svg.data([newData])
-                 .selectAll('text.outcome-heading')
-                 .data(matrix.outcomes);
+            = svg.selectAll('text.outcome-heading')
+                 .data(matrixCalc.outcomeHead);
 
           cells.enter().append('svg:rect')
                .classed('odds', true)
