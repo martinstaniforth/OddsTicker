@@ -23,14 +23,14 @@ namespace OddsTicker.Model
       SentimentDeltas =
         Observable.Defer(() => Observable.Start(() => MatchSchedule.GetMatchProbabilities(random)))
                   .Switch()
-                  .Delay(TimeSpan.FromSeconds(3))
+                  .Delay(TimeSpan.FromSeconds(1)) //probably not necessary, giving signalr and the browser time to catch up
                   .Repeat()
                   .Publish()
                   .RefCount();
 
       var bills = new Bookmaker("Billy Hills");
       var brokeLads = new Bookmaker("Brokelads", 0.89m);
-      var panicAll = new Bookmaker("Panic-all", 0.9m);
+      var panicAll = new Bookmaker("Panic-all", 0.92m);
 
 
       var billsFeed = bills.GetBookmakerOdds(SentimentDeltas, random);

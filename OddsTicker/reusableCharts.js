@@ -90,7 +90,7 @@
         return matrix;
 
       };
-      
+
       function exports(_selection) {
         _selection.each(function (_data) {
           var newData = modifyData(_data);
@@ -149,8 +149,8 @@
               });
 
           }
-          
-          
+
+
           cells = svg.selectAll('rect')
                      .data(matrixCalc.values);
 
@@ -432,8 +432,8 @@
                  .duration(duration)
                  .ease(ease)
                  .attr('x', function (d) {
-                    return xScale(d.y0 + (d.y / 2));
-                  })
+                   return xScale(d.y0 + (d.y / 2));
+                 })
                   .attr('y', function (d) {
                     return chartH / 2 + 5;
                   })

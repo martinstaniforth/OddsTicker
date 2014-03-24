@@ -80,7 +80,7 @@
           renderTimeout = $timeout(function () {
             chartElement.datum(data).call(chart);
           }, 200);
-        }
+        };
 
         scope.resize = function () {
           if (renderTimeout) clearTimeout(renderTimeout);
